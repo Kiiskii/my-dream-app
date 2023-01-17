@@ -1,8 +1,17 @@
 <section class="servers-component">
-  <h1>I'm in the servers component</h1>
-  <button [disabled]="!allowNewServer" class="btn btn-primary">
+  <label>Server name is {{ serverName }}</label>
+  <input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+  />
+  <button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+  >
     Add Server
   </button>
-  <p>{{ allowNewServer }}</p>
+  <p>{{ serverCreationStatus }}</p>
   <app-server></app-server>
 </section>
